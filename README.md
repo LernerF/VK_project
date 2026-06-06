@@ -131,7 +131,7 @@ MIT License
 **LernerF** — студент, разработчик
 
 - GitHub: [@LernerF](https://github.com/LernerF)
-- VK: [ссылка на профиль]
+- Email: Felixler2005@icloud.com
 
 ---
 
