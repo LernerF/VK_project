@@ -120,12 +120,6 @@ achievements-tracker/
 
 ---
 
-## 📄 Лицензия
-
-MIT License
-
----
-
 ## 👤 Автор
 
 **LernerF** — студент, разработчик
