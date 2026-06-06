@@ -1,0 +1,55 @@
+.notification-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.notification-icon {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  animation: icon-pop 0.5s ease;
+}
+
+.notification-icon span {
+  font-size: 50px;
+}
+
+.notification-icon.achievement {
+  background: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
+}
+
+.notification-icon.badge {
+  background: linear-gradient(135deg, #9b59b6 0%, #e91e63 100%);
+}
+
+.notification-icon.levelUp {
+  background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+}
+
+@keyframes icon-pop {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.notification-title {
+  margin-bottom: 12px;
+}
+
+.notification-description {
+  color: var(--vkui--color_text_secondary);
+  margin-bottom: 24px;
+}

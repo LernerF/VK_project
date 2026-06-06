@@ -1,0 +1,253 @@
+.achievement-card {
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: white;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 50px rgba(102, 126, 234, 0.15);
+}
+
+.achievement-card:hover::before {
+  opacity: 1;
+}
+
+.achievement-card.completed {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(0, 200, 100, 0.05) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-card.completed::after {
+  content: '✅';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 40px;
+  opacity: 0.1;
+  transform: rotate(15deg);
+  z-index: 0;
+}
+
+.achievement-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.achievement-icon {
+  font-size: 48px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
+}
+
+.achievement-card:hover .achievement-icon {
+  transform: scale(1.1);
+}
+
+.achievement-info {
+  flex: 1;
+}
+
+.achievement-title {
+  margin-bottom: 4px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.achievement-category {
+  color: #667eea;
+  font-size: 13px;
+  font-weight: 500;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 4px 12px;
+  border-radius: 16px;
+  display: inline-block;
+}
+
+.completed-badge {
+  animation: badge-pulse 2s ease-in-out infinite;
+  background: linear-gradient(135deg, #00b09b, #96c93d);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 176, 155, 0.3);
+}
+
+@keyframes badge-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(0, 176, 155, 0.3);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 176, 155, 0.5);
+  }
+}
+
+.achievement-description {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+.achievement-progress {
+  margin-bottom: 16px;
+  background: rgba(0, 0, 0, 0.02);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.progress-header span {
+  font-weight: 600;
+  color: #1a1a2e;
+  font-size: 16px;
+}
+
+.points-badge {
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  color: white !important;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(246, 211, 101, 0.2);
+}
+
+.completed-date {
+  color: #96c93d;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.completed-date::before {
+  content: '🎯';
+  font-size: 14px;
+}
+
+.achievement-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.achievement-actions button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+}
+
+.achievement-actions button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+.achievement-actions svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Анимация при выполнении */
+@keyframes achievement-complete {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.achievement-complete-animation {
+  animation: achievement-complete 0.5s ease;
+}
+
+/* Градиентный прогресс-бар */
+.progress-bar-gradient {
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-gradient::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: progress-shimmer 1.5s infinite;
+}
+
+@keyframes progress-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

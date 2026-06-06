@@ -1,0 +1,109 @@
+.statistics {
+  padding-bottom: 60px;
+}
+
+.stats-card {
+  margin-bottom: 20px;
+}
+
+.stats-title {
+  margin-bottom: 16px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.stat-block {
+  text-align: center;
+  padding: 16px;
+  background: var(--vkui--color_background_secondary);
+  border-radius: 12px;
+}
+
+.stat-number {
+  font-size: 28px;
+  color: var(--vkui--color_text_accent);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--vkui--color_text_secondary);
+}
+
+.section-title {
+  margin: 20px 0 12px;
+}
+
+.categories-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.category-card {
+  transition: transform 0.2s;
+}
+
+.category-card:hover {
+  transform: translateX(4px);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.category-icon {
+  font-size: 24px;
+}
+
+.category-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.recent-achievements {
+  display: flex;
+  gap: 12px;
+  padding: 4px 0;
+}
+
+.recent-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px;
+  background: var(--vkui--color_background_secondary);
+  border-radius: 12px;
+  min-width: 100px;
+}
+
+.recent-icon {
+  font-size: 32px;
+}
+
+.recent-title {
+  font-size: 11px;
+  text-align: center;
+}
+
+.motivation-card {
+  margin-top: 20px;
+  background: linear-gradient(
+    135deg,
+    var(--vkui--color_background) 0%,
+    rgba(255, 149, 0, 0.1) 100%
+  );
+}
+
+.tip-text {
+  margin-top: 8px;
+  color: var(--vkui--color_text_secondary);
+}
